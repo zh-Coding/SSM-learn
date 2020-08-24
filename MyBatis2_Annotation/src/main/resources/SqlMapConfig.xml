@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--MyBatis主配置文件-->
+<configuration>
+    <!--配置环境-->
+    <environments default="mysql">
+        <!--配置mysql的环境-->
+        <environment id="mysql">
+            <!--配置事务类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置数据源（数据库连接池）-->
+            <dataSource type="POOLED">
+                <!--数据连接的4个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis01"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--映射配置文件的位置，映射配置文件指的是映射每个dao独立的配置文件
+     注解配置是，  使用 class属性 写出被代理对象（dao接口）的全类名   /.-开发都是采用注解
+     -->
+    <mappers>
+        <mapper class="com.czh.dao.UserDao"></mapper>
+    </mappers>
+</configuration>
