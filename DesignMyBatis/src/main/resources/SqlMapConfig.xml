@@ -19,6 +19,6 @@
 
     <!--映射配置文件的位置，映射配置文件指的是映射每个dao独立的配置文件 -->
     <mappers>
-        <mapper resource="com/czh/dao/UserDao.xml"></mapper>
+        <mapper class="com.czh.dao.UserDao"></mapper>
     </mappers>
 </configuration>
