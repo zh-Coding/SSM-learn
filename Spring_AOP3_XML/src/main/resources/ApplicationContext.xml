@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.czh"></context:component-scan>
+<!--开启spring注解AOP的支持-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+<!--    <bean id="accountService" class="com.czh.service.impl.AccountServiceImpl"></bean>-->
+
+    <!--Spring中Aop配置步骤
+    1.把通知Bean交给spring来管理
+    2.使用aop:config标签表明开始AOP的配置
+    3.使用aop:aspect标签表明配置切面
+        id属性:是给切面的唯一标识
+        ref属性:引用通知类bean的Id
+    4.在aop:aspect标签中内部使用通知类型的标签指定通知位置
+        pointcut：用于指定切入点表达式，指定增强方法
+        切入点表达式的写法:
+            关键字:execution(表达式)
+            表达式：
+                访问修饰符 返回值 包名.类名.方法名(参数列表)
+            标准切入点表达式写法:
+            public void com.czh.service.impl.AccountServiceImpl.saveAccount()
+    -->
+<!--    <bean id="logger" class="com.czh.utils.Logger"></bean>-->
+<!--    <aop:config>-->
+<!--        <aop:aspect id="logAdvice" ref="logger" >-->
+<!--            &lt;!&ndash;配置通知类型，并建立通知方法和切入点方法的关联&ndash;&gt;-->
+<!--            <aop:before method="beforePrintLog" pointcut="execution(* com.czh.service.impl.AccountServiceImpl.*(..))"></aop:before>-->
+<!--            &lt;!&ndash;配置通知类型，并建立通知方法和切入点方法的关联&ndash;&gt;-->
+<!--            <aop:after-returning method="afterReturnPrintLog" pointcut="execution(* com.czh.service.impl.AccountServiceImpl.*(..))"></aop:after-returning>-->
+<!--            &lt;!&ndash;配置通知类型，并建立通知方法和切入点方法的关联&ndash;&gt;-->
+<!--            <aop:after method="afterPrintLog" pointcut="execution(* com.czh.service.impl.AccountServiceImpl.*(..))"></aop:after>-->
+<!--            &lt;!&ndash;配置通知类型，并建立通知方法和切入点方法的关联&ndash;&gt;-->
+<!--            <aop:after-throwing method="afterThrowingPrintLog" pointcut="execution(* com.czh.service.impl.AccountServiceImpl.*(..))"></aop:after-throwing>-->
+<!--            &lt;!&ndash;配置通知类型，并建立通知方法和切入点方法的关联&ndash;&gt;-->
+<!--            <aop:around method="aroundPrintLog" pointcut="execution(* com.czh.service.impl.AccountServiceImpl.*(..))"></aop:around>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>

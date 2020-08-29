@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--创建bean的三种方式-->
+    <!--1.使用空参构造器-->
+<!--    <bean id="accountService" class="com.com.czh.service.impl.AccountServiceImpl"></bean>-->
+
+    <!--2.使用普通工厂中的方法创建对象，并存入spring容器-->
+<!--    <bean id="instanceFactory" class="com.com.czh.factory.InstanceFactory"></bean>-->
+<!--    <bean id="accountService" factory-bean="instanceFactory" factory-method="getAccountService"></bean>-->
+
+    <!--3.使用工厂中的静态方法创建对象，并存入spring容器-->
+<!--    <bean id="accountService" class="com.com.czh.factory.StaticFactory" factory-method="getAccountService"></bean>-->
+
+    <context:component-scan base-package="com.com.czh"></context:component-scan>
+
+<!--    <bean id="accountService" class="com.com.czh.service.impl.AccountServiceImpl">-->
+<!--        <property name="accountDao" ref="accountDao"></property>-->
+<!--    </bean>-->
+<!--    <bean id="accountDao" class="com.com.czh.dao.impl.AccountDaoImpl"></bean>-->
+
+
+<!--    <bean id="accountService3" class="com.com.czh.service.impl.AccountServiceImpl3">-->
+<!--        <property name="str">-->
+<!--            <array>-->
+<!--                <value>111</value>-->
+<!--                <value>来得及干</value>-->
+<!--            </array>-->
+<!--        </property>-->
+<!--        <property name="list">-->
+<!--            <list>-->
+<!--                <ref bean="myDate"></ref>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="myDate" class="java.util.Date"></bean>-->
+</beans>

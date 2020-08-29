@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.com.czh.dao.AccountDao">
+    <resultMap id="accountUserMap" type="account3">
+        <id property="id" column="id"></id>
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+        <association property="user1" column="uid" javaType="user1" select="com.com.czh.dao.UserDao1.queryUser1ById"></association>
+    </resultMap>
+    <select id="findAll" resultMap="accountUserMap">
+        select * from account3
+    </select>
+    <select id="findAccountByUid" resultType="account3" parameterType="int">
+        select * from account3 where uid=#{uid};
+    </select>
+</mapper>
